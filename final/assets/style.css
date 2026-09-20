@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap');
 
 :root {
+  color-scheme: light;
   --navy: #071124;
   --navy-soft: #101d34;
   --ink: #172033;
@@ -14,8 +15,9 @@
   --red: #b54747;
 }
 
-html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; color: var(--ink); }
+html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; color: var(--ink); color-scheme: light; }
 .stApp { background: var(--paper); }
+[data-testid="stAppViewContainer"], [data-testid="stMain"] { background: var(--paper); color: var(--ink); }
 [data-testid="stHeader"] { background: transparent; }
 [data-testid="stSidebar"] { background: var(--navy); border-right: 1px solid rgba(255,255,255,.08); }
 [data-testid="stSidebar"] * { color: #e9ecf2; }
@@ -72,7 +74,19 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; color: var(--in
 [data-testid="stTextInput"] input, [data-testid="stSelectbox"] > div > div,
 [data-testid="stMultiSelect"] > div > div, textarea {
   background: #fff !important; border-radius: 10px !important; border-color: var(--line) !important;
+  color: var(--ink) !important; caret-color: var(--ink) !important;
 }
+[data-testid="stWidgetLabel"] p, [data-testid="stTextInput"] label p,
+[data-testid="stMultiSelect"] label p, [data-testid="stSelectbox"] label p,
+[data-testid="stCheckbox"] label p, [data-testid="stToggle"] label p {
+  color: var(--ink) !important;
+}
+[data-baseweb="select"] > div, [data-baseweb="popover"] > div,
+[role="listbox"], [role="option"] {
+  background-color: #fff !important; color: var(--ink) !important;
+}
+[data-baseweb="tag"] { background-color: #ebe5d9 !important; color: var(--navy) !important; }
+[data-testid="stCaptionContainer"], [data-testid="stCaptionContainer"] p { color: var(--muted) !important; }
 [data-testid="stDataFrame"] { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
 [data-testid="stMetric"] { background:#fff; border:1px solid var(--line); border-radius:14px; padding:1rem; }
 div[data-testid="stDialog"] > div { border-radius: 18px; }
